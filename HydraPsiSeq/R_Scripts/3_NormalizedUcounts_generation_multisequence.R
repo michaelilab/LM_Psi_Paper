@@ -4,14 +4,14 @@ rm(list=ls(all=TRUE)) #REMOVE ALL Variables
 ####### Input area #######
 
 ##path to input
-extDataDir <- "C:/Users/tirza/OneDrive - Bar Ilan University/Bioinfo Computer/Shula/HydraPsi/Files/Input"
+extDataDir <- "HydraPsi/Input"
 
 ##path to output
-ProjectDir <- "C:/Users/tirza/OneDrive - Bar Ilan University/Bioinfo Computer/Shula/HydraPsi/"
+ProjectDir <- "HydraPsi/Output"
 
 ##########Annotation Files#########################
-annot_file="C:/Users/user/OneDrive - Bar Ilan University/Bioinfo Computer/Shula/HydraPsi/Files/LM_rRNA_annot.txt"
-#annot_file="C:/Users/tirza/OneDrive - Bar Ilan University/Bioinfo Computer/Shula/HydraPsi/Files/La_predicted_rRNA_pseudos.txt"
+annot_file="DB/LM_rRNA_annot.txt"
+#annot_file="DB/La_predicted_rRNA_pseudos.txt"
 
 annot<-read.table(annot_file, sep="\t", header = TRUE)
 
