@@ -4,8 +4,8 @@ rm(list=ls(all=TRUE)) #REMOVE ALL Variables
 ####### Input area #######
 
 ##goodpairs
-#extDataDir <- "HydraPsi/Sequencing_21March2021/LM_rRNA/GoodPairs"
-#ProjectDir <- "Shula/HydraPsi/Sequencing_21March2021/LM_rRNA/GoodPairs_Results"
+extDataDir <- "GoodPairs"
+ProjectDir <- "GoodPairs_Results"
 
 ###########################################################
 
@@ -56,11 +56,9 @@ Sample_files <- list.files(z, pattern=count_files, recursive=F, full.names = TRU
 ReadsStatSample<- data.frame(matrix(ncol = 1, nrow = 0))
 colnames(ReadsStatSample)<-c("RNA")
 
-#y=type[1] #for tests
+
 y="rRNA_good_pairs"#only type
-#y="rRNA"
-#y="rRNA_R2"
-#for (y in type) {
+
   Count_file    <- list.files(z, pattern=paste0("*",y,count_files), recursive=F, full.names = TRUE) #".*" one ore more any characters
   Coverage_file <- list.files(z, pattern=paste0(coverage_files,"*"), recursive=F, full.names = TRUE)  
   statRNA <-NA
@@ -232,10 +230,8 @@ df<-FullRNA
   pdf(paste0(SampleDir,"/ZoomAllBasesDistribution_",y,".pdf"),width=pdf.width,height=pdf.height,paper='special')
   print(p)
   dev.off()
-#}
 
-
-
+#################################################################################################################
   colnames(ReadsStatSample) <- c(paste0(basename(z)))
   output_file <- paste0(SampleDir,"/Stat_",basename(z),".csv")
   write.csv(ReadsStatSample,file=output_file, quote =F)
@@ -245,7 +241,7 @@ df<-FullRNA
   ReadsStat$Row.names <-NULL
 
 
-}
+}#for DataDirs
 
 
 output_file <- paste0(ResultsDir,"/GlobalStat.csv")
